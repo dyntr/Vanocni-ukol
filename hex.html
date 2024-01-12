@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Hex Color Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <button id="backToMenu" onclick="location.href='index.html'">Back to Menu</button>
+
+
+    <h1>Hex Color Guessing Game</h1>
+    <p id="hex-text">#FFFFFF</p>
+    <div id="circle-cont"></div>
+    <p id="info-text">Guess the correct color!</p>
+    <button id="new-game-button" style="display:none;">Play Again</button>
+    <div id="level-buttons">
+        <button class="level-button" data-level="4">Easy</button>
+        <button class="level-button" data-level="6">Medium</button>
+        <button class="level-button" data-level="8">Hard</button>
+    </div>
+    <script src="colorGame.js"></script>
+</body>
+</html>
