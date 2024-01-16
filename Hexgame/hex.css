@@ -1,62 +1,3 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-}
-
-.split-screen {
-    display: flex;
-    height: 100%;
-}
-
-.game {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.5s ease;
-    text-decoration: none;
-}
-
-/* Efekt při najetí myši */
-.game:hover {
-    transform: scale(1.05);
-}
-
-/* Hex Color Guessing Game styl */
-.hex-color-game {
-    background: #7DCEA0;
-    color: #fff;
-}
-
-/* Tic Tac Toe styl */
-.tic-tac-toe {
-    background: #5499C7;
-    color: #fff;
-}
-
-.content h2 {
-    font-size: 2em;
-    border: 3px solid #fff;
-    padding: 20px;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.game:hover .content h2 {
-    background-color: #fff;
-    color: #333;
-}
-
-@media (max-width: 768px) {
-    .split-screen {
-        flex-direction: column;
-    }
-}
-
-/* hex */
 /* Základní nastavení */
 * {
     margin: 0;
@@ -223,60 +164,11 @@ h1 {
     cursor: pointer;
 }
 
-
-
-.board {
-    display: grid;
-    margin-top: 20px;
-    overflow: auto;
-}
-
-.board {
-    display: grid;
-    margin-top: 20px;
-    overflow: auto;
-}
-
-.cell {
-    width: 60px; 
-    height: 60px; 
-    border: 1px solid #999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.used {
-    pointer-events: none;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-
 #backToMenu {
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: #4CAF50; /* Green background */
+    background-color: #4CAF50;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -287,52 +179,5 @@ h1 {
 }
 
 #backToMenu:hover {
-    background-color: #45a049; /* Darker green */
+    background-color: #45a049;
 }
-
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-}
-
-.split-screen {
-    display: flex;
-    width: 100%; /* Nově přidáno */
-    height: 100vh; /* Upraveno z 100% na 100vh */
-}
-
-.game {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.5s ease;
-    text-decoration: none;
-    height: 100%; /* Nově přidáno */
-}
-
-/* Ostatní CSS pravidla zůstávají beze změn */
-
-/* Responzivní design */
-@media (max-width: 768px) {
-    .split-screen {
-        flex-direction: column;
-    }
-
-    .game {
-        width: 100%; /* Nově přidáno */
-    }
-}
-
-.random-game-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed; /* Fixované na spodní části obrazovky */
-    bottom: 20px;
-    width: 100%;
-}
-
