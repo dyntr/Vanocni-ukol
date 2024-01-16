@@ -8,6 +8,7 @@ let playing = true;
 let rightColor;
 let level = 4;
 
+
 function startNewGame() {
   playing = true;
   document.body.classList.remove('win-screen');
@@ -15,7 +16,7 @@ function startNewGame() {
   circleCont.innerHTML = '';
   hexText.style.display = "block";
   hexText.textContent = rightColor;
-  infoText.textContent = "Guess the correct color!"; // Nastavit původní text
+  infoText.textContent = "Guess the correct color!";
   createCircles();
   newGameButton.style.display = "none";
 }
@@ -72,6 +73,6 @@ function showWinScreen() {
   document.body.classList.add('win-screen');
   hexText.style.display = "block";
   hexText.textContent = "The color was: " + rightColor;
-  infoText.innerHTML = "<span>Correct! That's the color!</span>"; // Změnit text po výhře
+  infoText.innerHTML = "<span>Correct! That's the color!</span>";
   newGameButton.style.display = "block";
 }

@@ -109,18 +109,16 @@ button:hover {
     }
 }
 
-/* Button Animations */
 button:hover {
     transform: scale(1.1);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
 }
 
-/* Back to Menu Button */
 #backToMenu {
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: #4CAF50; /* Green background */
+    background-color: #4CAF50;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -131,17 +129,15 @@ button:hover {
 }
 
 #backToMenu:hover {
-    background-color: #45a049; /* Darker green */
+    background-color: #45a049;
 }
 
-/* Improved Win/Loss Notification */
 .modal-content {
-    color: black; /* Change text color */
-    /* Rest of your modal-content styles */
+    color: black;
+
 }
 
-/* Overlay Effect When Modal is Active */
 .modal {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 

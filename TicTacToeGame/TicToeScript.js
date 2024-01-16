@@ -103,11 +103,11 @@ function startGame(selectedDifficulty) {
             winCondition = 4;
             break;
         case 'hard':
-            createBoard(12);
+            createBoard(30);
             winCondition = 5;
             break;
     }
-    document.getElementById('gameBoard').style.display = 'grid'; // Zajistěte, že herní pole se zobrazí
+    document.getElementById('gameBoard').style.display = 'grid';
 }
 
 function restartGame() {
