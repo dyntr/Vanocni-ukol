@@ -103,7 +103,7 @@ function startGame(selectedDifficulty) {
             winCondition = 4;
             break;
         case 'hard':
-            createBoard(30);
+            createBoard(20);
             winCondition = 5;
             break;
     }
@@ -116,3 +116,71 @@ function restartGame() {
 }
 
 window.onload = () => startGame('easy');
+
+// Function to create and show the falling raindrop animation
+function showFallingRaindrops() {
+    const raindropContainer = document.createElement("div");
+    raindropContainer.id = "raindrop-container";
+
+    for (let i = 0; i < 70; i++) {
+        const raindrop = document.createElement("div");
+        raindrop.classList.add("raindrop");
+        raindrop.style.left = `${Math.random() * 100}%`;
+        raindrop.style.animationDelay = `${Math.random() * 2}s`;
+        raindropContainer.appendChild(raindrop);
+    }
+
+    document.body.appendChild(raindropContainer);
+
+    setTimeout(() => {
+        // Remove the raindrop container after a certain duration
+        const container = document.getElementById("raindrop-container");
+        if (container) {
+            container.remove();
+        }
+    }, 5000); // Adjust the duration as needed (in milliseconds)
+}
+
+// Function to show the winning message and initiate the raindrop animation
+function showWinningMessage() {
+    const modal = document.getElementById("modal");
+    const resultText = document.getElementById("resultText");
+    resultText.innerText = currentPlayer + " wins!";
+    modal.style.display = "block";
+
+    showFallingRaindrops(); // Show the raindrop animation
+}
+
+// Modify your checkWin function to show the winning message and animation
+function checkWin(x, y) {
+    const directions = [[1, 0], [0, 1], [1, 1], [1, -1]];
+    const neededToWin = winCondition - 1;
+
+    for (let [dx, dy] of directions) {
+        let count = 1;
+
+        for (let j = 1; j <= neededToWin; j++) {
+            if (x + dx * j < board.length && x + dx * j >= 0 && y + dy * j < board.length && y + dy * j >= 0 && board[x + dx * j][y + dy * j] === currentPlayer) {
+                count++;
+            } else {
+                break;
+            }
+        }
+
+        for (let j = 1; j <= neededToWin; j++) {
+            if (x - dx * j < board.length && x - dx * j >= 0 && y - dy * j < board.length && y - dy * j >= 0 && board[x - dx * j][y - dy * j] === currentPlayer) {
+                count++;
+            } else {
+                break;
+            }
+        }
+
+        if (count >= winCondition) {
+            showModal(currentPlayer + ' wins!');
+            showWinningMessage(); // Show the winning message and animation
+            return true;
+        }
+    }
+    
+    return false;
+}

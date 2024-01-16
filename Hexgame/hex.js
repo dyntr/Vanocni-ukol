@@ -69,10 +69,27 @@ newGameButton.addEventListener('click', startNewGame);
 window.onload = createCircles;
 
 function showWinScreen() {
-  document.body.style.backgroundColor = rightColor;
-  document.body.classList.add('win-screen');
+  rightColor = rightColor;
   hexText.style.display = "block";
   hexText.textContent = "The color was: " + rightColor;
-  infoText.innerHTML = "<span>Correct! That's the color!</span>";
+  infoText.innerHTML = "<span>Correct! That's the color!</span>"; 
   newGameButton.style.display = "block";
+
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  overlay.style.backgroundColor = rightColor;
+  document.body.appendChild(overlay);
+
+  setTimeout(function() {
+    overlay.style.opacity = 1;
+  }, 10); 
+
+  setTimeout(function() {
+    overlay.style.backgroundColor = "transparent";
+    overlay.style.opacity = 0;
+    setTimeout(function() {
+      overlay.remove();
+    }, 500);
+  }, 1000);
 }
+

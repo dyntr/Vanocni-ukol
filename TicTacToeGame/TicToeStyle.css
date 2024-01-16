@@ -45,7 +45,9 @@ button:hover {
     gap: 5px;
     margin-top: 20px;
     max-width: 100%;
+    grid-template-columns: repeat(30, 1fr);
     justify-content: center;
+    overflow: auto; /* Allow horizontal and vertical scrolling */
 }
 
 .cell {
@@ -55,10 +57,11 @@ button:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 2em;
+    font-size: 1.2em; /* Adjust font size for smaller cells */
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     aspect-ratio: 1 / 1;
+    padding: 5px; /* Add some padding to the cells for better spacing */
 }
 
 .used {
@@ -140,4 +143,5 @@ button:hover {
 .modal {
     background-color: rgba(0, 0, 0, 0.7);
 }
+
 
